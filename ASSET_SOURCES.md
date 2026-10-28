@@ -3,3 +3,5 @@
 - lil-gui 0.20.0 — https://github.com/georgealways/lil-gui — George Michael Brower — MIT. Debug controls, unmodified.
 - Architecture, vegetation silhouettes, utility poles, normal texture and sky gradient: original procedural prototype code. No downloaded binary art.
 - User-supplied reference: visual reference only; not redistributed in application.
+
+Phase 1.5: reuse official Three.js MIT BufferGeometryUtils (unmodified). Original seeded plaster/water textures in src/surfaces.ts; no external images. Local changes include window/cornice geometry, shadow configuration, sky shader, and normal input to official Water; Water source itself is unchanged. No third-party binary models added.

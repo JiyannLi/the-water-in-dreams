@@ -17,3 +17,6 @@ Native Three.js + TypeScript + Vite; lil-gui only exposes controls in debug mode
 
 ## GitHub Pages preview
 `.github/workflows/pages.yml` builds on pushes to main or manual dispatch, using the repository subpath `/the-water-in-dreams/`. Enable Settings → Pages → Source: GitHub Actions in the repository, then push the source and workflow to main. The successful deployment job reports the real preview URL. No deployment is confirmed until that job succeeds.
+
+## Phase 1.5 visual review
+`H` toggles all overlays; `?capture` opens the clean reference view. `P` restores the reference camera. `?debug` exposes visual controls. Browser regression: start Vite, then `node scripts/check-browser.mjs` (system Chromium or set CHROMIUM_PATH). See artifacts/browser-results.json for actual results. Scene-only screenshot: artifacts/phase-1-5-clean.png; before/after comparison: artifacts/comparison.html.

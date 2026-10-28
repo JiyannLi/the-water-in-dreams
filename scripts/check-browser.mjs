@@ -1,0 +1,8 @@
+import { chromium } from '@playwright/test';
+import { writeFile } from 'node:fs/promises';
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({viewport:{width:1554,height:1080}});const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+await page.goto('http://127.0.0.1:5173/?capture');await page.waitForTimeout(5000);await page.screenshot({path:'artifacts/phase-1-5-clean.png'});const metrics=await page.evaluate(()=>window.__dream);
+await page.keyboard.press('h');await page.locator('#enter').click();await page.waitForTimeout(300);const locked=await page.evaluate(()=>!!document.pointerLockElement);await page.keyboard.down('w');await page.waitForTimeout(1000);await page.keyboard.up('w');await page.waitForTimeout(2300);const moved=await page.evaluate(()=>window.__dream.position);
+await page.keyboard.press('Escape');await page.keyboard.press('p');await page.waitForTimeout(2300);const reset=await page.evaluate(()=>window.__dream.position);await page.locator('#quality').click();await page.waitForTimeout(2300);const low=await page.evaluate(()=>window.__dream);await page.locator('#quality').click();await page.screenshot({path:'artifacts/phase-1-5-ui.png'});
+const result={errors,metrics,locked,moved,reset,low};await writeFile('artifacts/browser-results.json',JSON.stringify(result,null,2));console.log(result);await browser.close();if(errors.length||!locked||JSON.stringify(reset)!==JSON.stringify([23,13.5,108]))process.exitCode=1;
