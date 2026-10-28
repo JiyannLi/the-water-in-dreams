@@ -1,0 +1,2 @@
+# Development
+Use the existing checkout; no worktree unless requested. Run npm ci and npm run build. Preserve clear near-field detail and calm water. Prefer licensed mature components; document assets in ASSET_SOURCES.md. No NPCs, jump scares, missions or interiors. Never equate a successful build with visual approval. Keep secrets out of the repository. Test pointer lock, collision, reference camera and reflections in a real browser after scene changes.

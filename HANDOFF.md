@@ -1,0 +1,8 @@
+# Handoff
+Implemented: calm animated planar reflection (Three.js Water), warm sky, distance fog, classical facade prototype, cupola, island, drowned distant houses, dead trees, leaning poles and cables, PointerLockControls, bounded time-step WASD/Shift movement, main building bounds collision, P reference viewpoint, debug controls, lower pixel ratio option.
+
+Validation: TypeScript and production build pass. Vite starts successfully. Chromium screenshot generated with system Chromium; see artifacts/reference.png. Browser installation download was denied by network policy; system Chromium used instead. No deployment performed.
+
+Limitations: not yet high-fidelity art acceptance. No licensed matching mansion acquired; current geometry is an explicit placeholder. Asset platform Kenney denied by network policy. No weathered PBR textures, LOD/instancing, player ripples, volumetric light or bloom. Low quality currently reduces resolution only. Building bounds collision and movement require further manual interactive testing. Reference framing needs visual iteration. GPU 1080p/60 FPS target is unverified; headless software-renderer performance is not representative. Need licensed mansion/environment asset integration and desktop GPU profiling before claiming first-stage completion.
+
+Initial 1554×1080 headless capture: no JS page errors; ~20 FPS in this cloud browser, 626 render calls, 11,834 triangles reported for the last pass. This does not meet the 60 FPS target. Initial visual review found overly saturated sky; shader output color conversion corrected afterward. Architecture still visibly simplified; material detail and atmosphere require substantial iteration.
